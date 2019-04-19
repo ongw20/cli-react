@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 const { minimist, logger, checkNodeVersion } = require('cli-shared-utils')
-const requiredVersion = require('../package.json').engines.node
+const requiredVersion = require('../package.json.js').engines.node
 
 // Check node version before requiring/doing anything else
 // The user may be on a very old node version
-checkNodeVersion(requiredVersion, 'react-cli')
+checkNodeVersion(requiredVersion, 'cli-react')
 
 const program = require('commander')
 
@@ -28,7 +28,7 @@ program
 
 program
   .command('create <app-name>')
-  .description('create a new project powered by react-cli-service')
+  .description('create a new project powered by cli-react-service')
   .option('-t, --template <template>', 'use template (default template: babel)')
   .action((name, cmd) => {
     const options = cleanArgs(cmd)

@@ -1,25 +1,26 @@
 {
-  "name": "@react/cli-service",
+  "name": "cli-react-service",
   "version": "0.0.1",
-  "description": "Local service for react-cli projects.",
+  "description": "Local service for react projects.",
   "bin": {
-    "react-service": "bin/react-cli-service.js"
+    "react-service": "bin/react-service.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ongw20/react-cli.git",
-    "directory": "packages/react-cli-service"
+    "url": "git+https://github.com/ongw20/cli-react.git",
+    "directory": "packages/cli-react-service"
   },
   "keywords": [
     "react",
     "cli",
     "react-service",
+    "cli-react-service",
     "react-cli-service"
   ],
   "author": "ong <ongw20@outlook.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ongw20/react-cli/issues"
+    "url": "https://github.com/ongw20/cli-react/issues"
   },
   "publishConfig": {
     "access": "public"

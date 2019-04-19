@@ -1,9 +1,9 @@
-# @react/cli
+# cli-react
 Command line interface for rapid React.js development.
 
 ### Install
 ```sh
-npm i -g @react/cli
+npm i -g cli-react
 ```
 
 ### Usage

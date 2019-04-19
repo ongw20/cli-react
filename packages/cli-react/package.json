@@ -1,26 +1,27 @@
 {
-  "name": "@react/cli",
+  "name": "cli-react",
   "version": "0.0.1",
   "description": "Command line interface for rapid React.js development.",
   "bin": {
-    "react": "bin/react-cli.js"
+    "react": "bin/react.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ongw20/react-cli.git",
-    "directory": "packages/react-cli"
+    "url": "git+https://github.com/ongw20/cli-react.git",
+    "directory": "packages/cli-react"
   },
   "keywords": [
     "react",
     "cli",
+    "cli-react",
     "react-cli"
   ],
   "author": "ong <ongw20@outlook.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ongw20/react-cli/issues"
+    "url": "https://github.com/ongw20/cli-react/issues"
   },
-  "homepage": "https://github.com/ongw20/react-cli/tree/master/packages/react-cli#readme",
+  "homepage": "https://github.com/ongw20/cli-react/tree/master/packages/cli-react#readme",
   "publishConfig": {
     "access": "public"
   },

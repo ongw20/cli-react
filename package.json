@@ -1,5 +1,5 @@
 {
-  "name": "react-cli",
+  "name": "cli-react",
   "description": "Command line interface for rapid React development.",
   "workspaces": [
     "packages/*"
@@ -16,20 +16,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ongw20/react-cli.git"
+    "url": "git+https://github.com/ongw20/cli-react.git"
   },
   "keywords": [
     "react",
     "cli",
     "react-app",
-    "react-cli"
+    "cli-react"
   ],
   "author": "ong <ongw20@outlook.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ongw20/react-cli/issues"
+    "url": "https://github.com/ongw20/cli-react/issues"
   },
-  "homepage": "https://github.com/ongw20/react-cli#readme",
+  "homepage": "https://github.com/ongw20/cli-react#readme",
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",

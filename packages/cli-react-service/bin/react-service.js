@@ -3,7 +3,7 @@
 const { minimist, checkNodeVersion } = require('cli-shared-utils')
 const requiredVersion = require('../package.json').engines.node
 
-checkNodeVersion(requiredVersion, 'react-cli-service')
+checkNodeVersion(requiredVersion, 'cli-react-service')
 
 const rawArgv = process.argv.slice(2)
 const args = minimist(rawArgv)
