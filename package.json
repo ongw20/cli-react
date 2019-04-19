@@ -6,8 +6,8 @@
   ],
   "scripts": {
     "postinstall": "lerna bootstrap",
-    "lint": "eslint --fix packages/**/*.js packages/**/bin/*",
-    "lerna-pub": "lerna publish"
+    "lint": "eslint --fix packages/**/*.js",
+    "pub": "lerna publish"
   },
   "husky": {
     "hooks": {
