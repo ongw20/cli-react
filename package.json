@@ -22,7 +22,7 @@
     "react",
     "cli",
     "react-app",
-    "cli-react"
+    "cli-react-app"
   ],
   "author": "ong <ongw20@outlook.com>",
   "license": "MIT",

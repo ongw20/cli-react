@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/ongw20/cli-react/issues"
   },
-  "homepage": "https://github.com/ongw20/cli-react/tree/master/packages/cli-react#readme",
+  "homepage": "https://github.com/ongw20/cli-react/tree/master/packages/cli-react-app#readme",
   "publishConfig": {
     "access": "public"
   },
@@ -34,6 +34,5 @@
   },
   "engines": {
     "node": ">=8.9"
-  },
-  "gitHead": "dd891f737d09e0321b7c697e7714aff52a169cc6"
+  }
 }
