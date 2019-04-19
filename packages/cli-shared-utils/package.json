@@ -20,5 +20,12 @@
   "homepage": "https://github.com/ongw20/react-cli/tree/master/packages/cli-shared-utils#readme",
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "fs-extra": "^7.0.1",
+    "minimist": "^1.2.0",
+    "semver": "^6.0.0",
+    "string.prototype.padstart": "^3.0.0"
   }
 }
