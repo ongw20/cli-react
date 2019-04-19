@@ -1,0 +1,49 @@
+{
+  "name": "@react/cli-service",
+  "version": "0.0.0",
+  "description": "Local service for react-cli projects.",
+  "bin": {
+    "react-service": "react-cli-service.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ongw20/react-cli.git",
+    "directory": "packages/react-cli-service"
+  },
+  "keywords": [
+    "react",
+    "cli",
+    "react-service",
+    "react-cli-service"
+  ],
+  "author": "ong <ongw20@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ongw20/react-cli/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^2.0.1",
+    "cli-shared-utils": "0.0.0",
+    "cliui": "^5.0.0",
+    "copy-webpack-plugin": "^5.0.2",
+    "eslint": "^5.16.0",
+    "eslint-loader": "^2.1.2",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-webpack-plugin": "^3.2.0",
+    "ip": "^1.1.5",
+    "portfinder": "^1.0.20",
+    "webpack": "^4.30.0",
+    "webpack-dev-server": "^3.3.1",
+    "webpack-merge": "^4.2.1",
+    "webpackbar": "^3.2.0"
+  },
+  "engines": {
+    "node": ">=8.9"
+  }
+}
