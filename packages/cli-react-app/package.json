@@ -1,6 +1,6 @@
 {
   "name": "cli-react-app",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Command line interface for rapid React.js development.",
   "bin": {
     "react": "bin/react.js"
@@ -26,7 +26,7 @@
     "access": "public"
   },
   "dependencies": {
-    "cli-shared-utils": "^0.0.2",
+    "cli-shared-utils": "^0.0.3",
     "download-git-repo": "^1.1.0",
     "handlebars": "^4.1.2",
     "ora": "^3.4.0",
