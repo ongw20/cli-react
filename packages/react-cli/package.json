@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Command line interface for rapid React.js development.",
   "bin": {
-    "react": "react-cli.js"
+    "react": "bin/react-cli.js"
   },
   "repository": {
     "type": "git",

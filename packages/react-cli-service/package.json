@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Local service for react-cli projects.",
   "bin": {
-    "react-service": "react-cli-service.js"
+    "react-service": "bin/react-cli-service.js"
   },
   "repository": {
     "type": "git",
