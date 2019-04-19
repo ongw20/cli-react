@@ -39,8 +39,8 @@ async function getWebpackDevConfig(webpackConfigFile, hashLen) {
     entry: devServerConfig.hot ? [
       `webpack-dev-server/client?${protocal}://${host}:${devServerConfig.port}`,
       devServerConfig.hotOnly ? 'webpack/hot/only-dev-server' : 'webpack/hot/dev-server',
-      './src/index.js'
-    ] : './src/index.js',
+      webpackUserConfig.entry
+    ] : webpackUserConfig.entry,
     output: {
       filename: 'js/[name].js',
       chunkFilename: `js/[name].[chunkhash:${hashLen}].js`,
