@@ -1,6 +1,6 @@
 {
   "name": "cli-shared-utils",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Shared utilities for cli packages.",
   "main": "index.js",
   "repository": {
