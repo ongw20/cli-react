@@ -1,0 +1,24 @@
+{
+  "name": "cli-shared-utils",
+  "version": "0.0.0",
+  "description": "Shared utilities for cli packages.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ongw20/react-cli.git",
+    "directory": "packages/cli-shared-utils"
+  },
+  "keywords": [
+    "cli",
+    "cli-shared-utils"
+  ],
+  "author": "ong <ongw20@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ongw20/react-cli/issues"
+  },
+  "homepage": "https://github.com/ongw20/react-cli/tree/master/packages/cli-shared-utils#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}
