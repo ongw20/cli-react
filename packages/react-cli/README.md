@@ -1,4 +1,4 @@
-# react-cli
+# @react/cli
 Command line interface for rapid React.js development.
 
 ### Install
