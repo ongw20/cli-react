@@ -36,11 +36,6 @@ async function getWebpackDevConfig(webpackConfigFile, hashLen) {
   const devConfig = merge(webpackBaseConfig, {
     mode: 'development',
     devtool: 'inline-source-map',
-    entry: devServerConfig.hot ? [
-      `webpack-dev-server/client?${protocal}://${host}:${devServerConfig.port}`,
-      devServerConfig.hotOnly ? 'webpack/hot/only-dev-server' : 'webpack/hot/dev-server',
-      webpackUserConfig.entry
-    ] : webpackUserConfig.entry,
     output: {
       filename: 'js/[name].js',
       chunkFilename: `js/[name].[chunkhash:${hashLen}].js`,
@@ -73,7 +68,6 @@ function getWebpackProdConfig(webpackConfigFile, hashLen) {
   const webpackUserConfig = getWebpackUserConfig(webpackConfigFile)
   return merge(webpackBaseConfig, {
     mode: 'production',
-    entry: './src/index.js',
     output: {
       filename: `js/[name].[chunkhash:${hashLen}].js`,
       chunkFilename: `js/[name].[chunkhash:${hashLen}].js`,
