@@ -7,7 +7,10 @@ const WebpackBar = require('webpackbar')
 module.exports = (hashLen) => ({
   entry: './src/entry.js',
   output: {
-    path: path.join(process.env.CONTEXT, 'dist')
+    path: path.join(process.env.CONTEXT, 'dist'),
+    filename: 'js/[name].js',
+    chunkFilename: `js/[name].[chunkhash:${hashLen}].js`,
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx']

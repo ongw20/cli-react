@@ -36,11 +36,6 @@ async function getWebpackDevConfig(webpackConfigFile, hashLen) {
   const devConfig = merge(webpackBaseConfig, {
     mode: 'development',
     devtool: 'inline-source-map',
-    output: {
-      filename: 'js/[name].js',
-      chunkFilename: `js/[name].[chunkhash:${hashLen}].js`,
-      publicPath: '/'
-    },
     plugins: [
       new FriendlyErrorsWebpackPlugin({
         compilationSuccessInfo: {
@@ -69,9 +64,7 @@ function getWebpackProdConfig(webpackConfigFile, hashLen) {
   return merge(webpackBaseConfig, {
     mode: 'production',
     output: {
-      filename: `js/[name].[chunkhash:${hashLen}].js`,
-      chunkFilename: `js/[name].[chunkhash:${hashLen}].js`,
-      publicPath: '/'
+      filename: `js/[name].[chunkhash:${hashLen}].js`
     },
     optimization: {
       splitChunks: {

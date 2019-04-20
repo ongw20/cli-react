@@ -5,10 +5,7 @@ const { logger } = require('cli-shared-utils')
 module.exports = async function(options, serverOptions) {
   logger.info('Starting development server...')
   const compiler = webpack(options)
-  const server = new WebpackDevServer(compiler, Object.assign({
-    contentBase: options.output.path,
-    ...serverOptions
-  }))
+  const server = new WebpackDevServer(compiler, serverOptions)
   server.listen(serverOptions.port, serverOptions.host, (err) => {
     if (err) {
       logger.error('Starting server failed.')
