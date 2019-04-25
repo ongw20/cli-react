@@ -71,7 +71,8 @@ function getWebpackProdConfig(webpackConfigFile, hashLen) {
       splitChunks: {
         chunks: 'all',
         name: true
-      }
+      },
+      runtimeChunk: true
     },
     plugins: [
       new FriendlyErrorsWebpackPlugin()
