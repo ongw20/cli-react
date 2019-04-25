@@ -9,8 +9,9 @@ const getWepbackBaseConfig = require('./base')
 function getWebpackUserConfig(webpackConfigFile) {
   try {
     return require(path.join(process.env.CONTEXT, webpackConfigFile))
-  } catch (_) {
-    return {}
+  } catch (err) {
+    logger.error(err)
+    process.exit(1)
   }
 }
 
