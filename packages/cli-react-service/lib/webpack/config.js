@@ -1,6 +1,8 @@
 const path = require('path')
 const merge = require('webpack-merge')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
+const TerserWebpackPlugin = require('terser-webpack-plugin')
+const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
 const portfinder = require('portfinder')
 const ip = require('ip')
 const { chalk, logger } = require('cli-shared-utils')
@@ -68,6 +70,10 @@ function getWebpackProdConfig(webpackConfigFile, hashLen) {
       filename: `js/[name].[chunkhash:${hashLen}].js`
     },
     optimization: {
+      minimizer: [
+        new TerserWebpackPlugin({}),
+        new OptimizeCssAssetsWebpackPlugin({})
+      ],
       splitChunks: {
         chunks: 'all',
         name: true
