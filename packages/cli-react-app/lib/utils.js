@@ -21,7 +21,7 @@ async function loadTemplate(template, dest, name) {
     await fs.remove(tmpdir)
   }
   await new Promise((resolve, reject) => {
-    download(getTemplateUrl(template), tmpdir, { clone: true }, err => {
+    download(getTemplateUrl(template), tmpdir, { clone: true, shallow: true }, err => {
       if (err) return reject(err)
       resolve()
     })
