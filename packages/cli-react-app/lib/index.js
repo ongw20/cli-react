@@ -34,7 +34,7 @@ async function create(projectName, options) {
       await loadTemplate(template, targetDir, name)
       spinner.succeed(`Success! Created ${chalk.cyan.bold(name)} at ${targetDir}`)
       logger.log(
-        'Inside that directory, you can run several commands:\n\n' +
+        '\nInside that directory, you can run several commands:\n\n' +
         `  ${chalk.blue('npm install')}\n` +
         '    Installs dependencies for the project.\n\n' +
         `  ${chalk.blue('npm run dev')}\n` +
