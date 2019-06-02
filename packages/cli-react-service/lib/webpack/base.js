@@ -30,7 +30,12 @@ module.exports = (hashLen) => ({
               cacheDirectory: true
             }
           },
-          'eslint-loader'
+          {
+            loader: 'eslint-loader',
+            options: {
+              fix: true
+            }
+          }
         ]
       },
       {
