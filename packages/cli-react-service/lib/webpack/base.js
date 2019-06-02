@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WebpackBar = require('webpackbar')
 
 module.exports = (hashLen) => ({
-  entry: './src/entry.js',
+  entry: './src/index.js',
   output: {
     path: path.join(process.env.CONTEXT, 'dist'),
     filename: 'js/[name].js',
