@@ -1,7 +1,7 @@
 const path = require('path')
 const ora = require('ora')
 const validateProjectName = require('validate-npm-package-name')
-const { fs, logger } = require('cli-shared-utils')
+const { fs, chalk, logger } = require('cli-shared-utils')
 const { validateTemplate, loadTemplate } = require('./utils')
 
 async function create(projectName, options) {
@@ -32,7 +32,24 @@ async function create(projectName, options) {
     const spinner = ora('Generating project...').start()
     try {
       await loadTemplate(template, targetDir, name)
-      spinner.succeed('All have been set!')
+      spinner.succeed(`Success! Created ${chalk.cyan(name)} at ${targetDir}`)
+      logger.log(
+        'Inside that directory, you can run several commands:\n\n' +
+        `  ${chalk.blue('npm install')}\n` +
+        '    Installs dependencies for the project.\n\n' +
+        `  ${chalk.blue('npm run dev')}\n` +
+        '    Starts the development server.\n\n' +
+        `  ${chalk.blue('npm run build')}\n` +
+        '    Bundles the app into static files for production.\n\n' +
+        `  ${chalk.blue('npm run lint')}\n` +
+        '    Formats codes with eslint.\n\n' +
+        `  ${chalk.blue('npm test')}\n` +
+        '    Starts the test runner.\n\n' +
+        'We suggest that you begin by typing:\n\n' +
+        `  ${chalk.blue('cd')} ${name}\n` +
+        `  ${chalk.blue('npm install')}\n` +
+        `  ${chalk.blue('npm run dev')}\n`
+      )
     } catch (err) {
       spinner.fail('There is some error!')
       logger.log(err)
