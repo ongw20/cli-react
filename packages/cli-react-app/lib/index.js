@@ -41,8 +41,6 @@ async function create(projectName, options) {
         '    Starts the development server.\n\n' +
         `  ${chalk.blue('npm run build')}\n` +
         '    Bundles the app into static files for production.\n\n' +
-        `  ${chalk.blue('npm run lint')}\n` +
-        '    Formats codes with eslint.\n\n' +
         `  ${chalk.blue('npm test')}\n` +
         '    Starts the test runner.\n\n' +
         'We suggest that you begin by typing:\n\n' +
