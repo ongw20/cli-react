@@ -16,4 +16,6 @@ cd app-name && npm i
 
 npm run dev   # development
 npm run build # production
+npm run lint  # formats the code
+npm test      # starts the test runner
 ```

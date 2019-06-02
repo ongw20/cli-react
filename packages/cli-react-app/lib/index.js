@@ -32,7 +32,7 @@ async function create(projectName, options) {
     const spinner = ora('Generating project...').start()
     try {
       await loadTemplate(template, targetDir, name)
-      spinner.succeed(`Success! Created ${chalk.cyan(name)} at ${targetDir}`)
+      spinner.succeed(`Success! Created ${chalk.cyan.bold(name)} at ${targetDir}`)
       logger.log(
         'Inside that directory, you can run several commands:\n\n' +
         `  ${chalk.blue('npm install')}\n` +
