@@ -2,7 +2,7 @@ const path = require('path')
 const ora = require('ora')
 const validateProjectName = require('validate-npm-package-name')
 const { fs, chalk, logger } = require('cli-shared-utils')
-const { validateTemplate, loadTemplate } = require('./utils')
+const { loadTemplate } = require('./utils')
 
 async function create(projectName, options) {
   const cwd = process.cwd()
@@ -24,14 +24,9 @@ async function create(projectName, options) {
     logger.error(`Project already exists: "${targetDir}"`)
     process.exit(1)
   } else {
-    const template = options.template || 'babel'
-    if (!validateTemplate(template)) {
-      logger.error(`Template does not exist: "${template}"`)
-      process.exit(1)
-    }
     const spinner = ora('Generating project...').start()
     try {
-      await loadTemplate(template, targetDir, name)
+      await loadTemplate(options.template, targetDir, name)
       spinner.succeed(`Success! Created ${chalk.cyan.bold(name)} at ${targetDir}`)
       logger.log(
         '\nInside that directory, you can run several commands:\n\n' +

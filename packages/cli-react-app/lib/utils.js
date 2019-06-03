@@ -2,11 +2,7 @@ const path = require('path')
 const Handlebars = require('handlebars')
 const download = require('download-git-repo')
 const { fs } = require('cli-shared-utils')
-const { TMP_DIR, VALID_TEMPLATES, getTemplateUrl } = require('./config')
-
-function validateTemplate(template) {
-  return VALID_TEMPLATES.includes(template)
-}
+const { TMP_DIR, getTemplateUrl } = require('../config')
 
 async function renderFile(filepath, dest, data) {
   const source = await fs.readFile(filepath, 'utf-8')
@@ -40,6 +36,5 @@ async function loadTemplate(template, dest, name) {
 }
 
 module.exports = {
-  validateTemplate,
   loadTemplate
 }
