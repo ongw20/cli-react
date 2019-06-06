@@ -8,7 +8,7 @@ const requiredVersion = require('../package.json').engines.node
 checkNodeVersion(requiredVersion, 'cli-react-app')
 
 const program = require('commander')
-const request = require('request')
+const fetch = require('node-fetch')
 const { templatesUrl } = require('../config')
 
 function camelize(str) {
@@ -24,41 +24,42 @@ function cleanArgs(cmd) {
   return args
 }
 
-request.get(templatesUrl, (err, res, body) => {
-  if (!err && res.statusCode === 200) {
-    const templates = JSON.parse(body)
+fetch(templatesUrl).then(res => res.json()).then(templates => {
+  program
+    .version(require('../package').version)
+    .usage('<command> [options]')
 
-    program
-      .version(require('../package').version)
-      .usage('<command> [options]')
+  program
+    .command('create <app-name>')
+    .description('create a new project powered by cli-react-service')
+    .option('-t, --template <template>', `use template(default: babel) -- ${Object.keys(templates).join(' | ')}`)
+    .action((name, cmd) => {
+      const options = cleanArgs(cmd)
 
-    program
-      .command('create <app-name>')
-      .description('create a new project powered by cli-react-service')
-      .option('-t, --template <template>', `use template(default: babel) -- ${Object.keys(templates).join(' | ')}`)
-      .action((name, cmd) => {
-        const options = cleanArgs(cmd)
+      if (minimist(process.argv.slice(3))._.length > 1) {
+        logger.log()
+        logger.warn('You provided more than one argument. The first one will be used as the app\'s name, the rest are ignored.')
+      }
 
-        if (minimist(process.argv.slice(3))._.length > 1) {
-          logger.log()
-          logger.warn('You provided more than one argument. The first one will be used as the app\'s name, the rest are ignored.')
-        }
+      const template = options.template || 'babel'
+      if (!templates[template]) {
+        logger.error(`Template does not exist: "${template}"`)
+        process.exit(1)
+      }
+      options.template = templates[template]
+      require('../lib')(name, options)
+    })
 
-        const template = options.template || 'babel'
-        if (!templates[template]) {
-          logger.error(`Template does not exist: "${template}"`)
-          process.exit(1)
-        }
-        options.template = templates[template]
-        require('../lib')(name, options)
-      })
+  program.parse(process.argv)
 
-    program.parse(process.argv)
-
-    if (!program.args.length) {
-      program.help()
-    }
-  } else {
-    logger.error(err)
+  if (!program.args.length) {
+    program.help()
   }
+}).catch(err => {
+  if (err instanceof fetch.FetchError) {
+    logger.error('Something wrong with the network, please try it later!')
+  } else {
+    logger.error('Something wrong, please try it later!')
+  }
+  process.exit(1)
 })
