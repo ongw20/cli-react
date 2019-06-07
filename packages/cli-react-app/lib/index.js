@@ -24,7 +24,7 @@ async function create(projectName, options) {
     logger.error(`Project already exists: "${targetDir}"`)
     process.exit(1)
   } else {
-    const spinner = ora('Generating project...').start()
+    const spinner = ora('Creating project ...').start()
     try {
       await loadTemplate(options.template, targetDir, name)
       spinner.succeed(`Success! Created ${chalk.cyan.bold(name)} at ${targetDir}`)
