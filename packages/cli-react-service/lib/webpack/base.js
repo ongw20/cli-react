@@ -81,7 +81,11 @@ module.exports = (hashLen) => ({
     hotOnly: false,
     hot: true,
     quiet: true,
-    clientLogLevel: 'none',
+    clientLogLevel: 'error',
+    overlay: {
+      warnings: false,
+      errors: false
+    },
     historyApiFallback: true
   }
 })
