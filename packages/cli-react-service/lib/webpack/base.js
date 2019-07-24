@@ -1,7 +1,4 @@
 const path = require('path')
-const CleanWebpackPLugin = require('clean-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WebpackBar = require('webpackbar')
 
 module.exports = (hashLen) => ({
@@ -57,22 +54,7 @@ module.exports = (hashLen) => ({
     ]
   },
   plugins: [
-    new WebpackBar(),
-    new CleanWebpackPLugin(),
-    new CopyWebpackPlugin([{
-      from: 'public',
-      to: './',
-      ignore: ['index.html']
-    }]),
-    new HtmlWebpackPlugin({
-      template: 'public/index.html',
-      filename: 'index.html',
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true
-      },
-      hash: false
-    })
+    new WebpackBar()
   ],
   devServer: {
     https: false,
