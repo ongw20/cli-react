@@ -1,4 +1,4 @@
-const { logger } = require('cli-shared-utils')
+const { logger } = require('cli-react-utils')
 const { getWebpackProdConfig, getWebpackDevConfig } = require('./webpack/config')
 const serve = require('./webpack/serve')
 const build = require('./webpack/build')

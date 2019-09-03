@@ -1,31 +1,27 @@
 {
-  "name": "cli-shared-utils",
+  "name": "cli-react-utils",
   "version": "0.3.0",
   "description": "Shared utilities for cli packages.",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ongw20/cli-react.git",
-    "directory": "packages/cli-shared-utils"
+    "directory": "packages/cli-react-utils"
   },
   "keywords": [
     "cli",
-    "cli-shared-utils"
+    "cli-react-utils"
   ],
   "author": "ong <ongw20@outlook.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ongw20/cli-react/issues"
   },
-  "homepage": "https://github.com/ongw20/cli-react/tree/master/packages/cli-shared-utils#readme",
+  "homepage": "https://github.com/ongw20/cli-react/tree/master/packages/cli-react-utils#readme",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "chalk": "^2.4.2",
-    "fs-extra": "^7.0.1",
-    "minimist": "^1.2.0",
-    "semver": "^6.0.0",
-    "string.prototype.padstart": "^3.0.0"
+    "cli-shared-utils": "^0.3.1"
   }
 }

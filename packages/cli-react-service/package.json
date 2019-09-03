@@ -29,7 +29,7 @@
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "babel-loader": "^8.0.5",
-    "cli-shared-utils": "^0.3.0",
+    "cli-react-utils": "^0.3.0",
     "cliui": "^5.0.0",
     "eslint": "^5.16.0",
     "eslint-loader": "^2.1.2",

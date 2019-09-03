@@ -1,7 +1,7 @@
 const path = require('path')
 const ora = require('ora')
 const validateProjectName = require('validate-npm-package-name')
-const { fs, chalk, logger } = require('cli-shared-utils')
+const { fs, chalk, logger } = require('cli-react-utils')
 const { loadTemplate } = require('./utils')
 
 async function create(projectName, options) {

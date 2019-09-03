@@ -1,7 +1,7 @@
 const path = require('path')
 const Handlebars = require('handlebars')
 const download = require('download-git-repo')
-const { fs } = require('cli-shared-utils')
+const { fs } = require('cli-react-utils')
 const { TMP_DIR, getTemplateUrl } = require('../config')
 
 async function renderFile(filepath, dest, data) {

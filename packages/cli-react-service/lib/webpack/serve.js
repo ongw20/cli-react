@@ -1,6 +1,6 @@
 const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
-const { logger } = require('cli-shared-utils')
+const { logger } = require('cli-react-utils')
 
 module.exports = async function(options, serverOptions) {
   logger.info('Starting development server...')

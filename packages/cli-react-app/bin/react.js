@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { minimist, logger, checkNodeVersion } = require('cli-shared-utils')
+const { minimist, logger, checkNodeVersion } = require('cli-react-utils')
 const requiredVersion = require('../package.json').engines.node
 
 // Check node version before requiring/doing anything else

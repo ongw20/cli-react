@@ -5,7 +5,7 @@ const TerserWebpackPlugin = require('terser-webpack-plugin')
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
 const portfinder = require('portfinder')
 const ip = require('ip')
-const { chalk, logger } = require('cli-shared-utils')
+const { chalk, logger } = require('cli-react-utils')
 const getWepbackBaseConfig = require('./base')
 
 function getWebpackUserConfig(webpackConfigFile) {

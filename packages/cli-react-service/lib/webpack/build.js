@@ -2,7 +2,7 @@ const path = require('path')
 const zlib = require('zlib')
 const webpack = require('webpack')
 const ui = require('cliui')({ width: 80 })
-const { fs, chalk, logger } = require('cli-shared-utils')
+const { fs, chalk, logger } = require('cli-react-utils')
 
 module.exports = function(options) {
   logger.info('Building for production...')
