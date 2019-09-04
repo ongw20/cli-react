@@ -1,8 +1,6 @@
 const path = require('path')
-const ora = require('ora')
 const validateProjectName = require('validate-npm-package-name')
-const { fs, chalk, logger } = require('cli-react-utils')
-const { loadTemplate } = require('./utils')
+const { fs, chalk, logger, clearConsole, execute } = require('cli-shared-utils')
 
 async function create(projectName, options) {
   const cwd = process.cwd()
@@ -24,10 +22,13 @@ async function create(projectName, options) {
     logger.error(`Project already exists: "${targetDir}"`)
     process.exit(1)
   } else {
-    const spinner = ora('Creating project...').start()
+    logger.info('Creating project...\n')
     try {
-      await loadTemplate(options.template, targetDir, name)
-      spinner.succeed(`Success! Created ${chalk.cyan.bold(name)} at ${targetDir}`)
+      await execute('git init', [], targetDir)
+      const { preset } = options
+      await execute(`npm install react-preset-${preset}`, ['--no-save'], targetDir)
+      clearConsole()
+      logger.done(`Success! Created ${chalk.cyan.bold(name)} at ${targetDir}`)
       logger.log(
         '\nInside that directory, you can run several commands:\n\n' +
         `  ${chalk.blue('npm install')}\n` +
@@ -44,8 +45,8 @@ async function create(projectName, options) {
         `  ${chalk.blue('npm run dev')}\n`
       )
     } catch (err) {
-      spinner.fail('There is some error!')
-      logger.log(err)
+      logger.error(err)
+      await fs.remove(targetDir)
       process.exit(1)
     }
   }
