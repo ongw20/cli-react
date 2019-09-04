@@ -26,6 +26,8 @@ function initGit(targetDir) {
     '.DS_store',
     '.vscode',
     '/dist/',
+    '\n',
+    '*css.d.ts',
     '\n'
   ].join('\n')
   fs.outputFileSync(path.join(targetDir, '.gitignore'), gitIgnore)

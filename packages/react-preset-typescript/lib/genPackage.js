@@ -24,6 +24,7 @@ function getCombinedJson(pkgJson) {
       'cli-react-service': '^0.3.0',
       'copy-webpack-plugin': '^5.0.2',
       'css-loader': '^2.1.1',
+      'eslint-plugin-react': '^7.14.3',
       'html-webpack-plugin': '^3.2.0',
       'jest': '^24.7.1',
       'mini-css-extract-plugin': '^0.6.0',
