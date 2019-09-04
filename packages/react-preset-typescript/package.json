@@ -1,0 +1,32 @@
+{
+  "name": "react-preset-typescript",
+  "version": "0.0.0",
+  "description": "React preset typescript.",
+  "scripts": {
+    "install": "node ./scripts/install.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ongw20/cli-react.git",
+    "directory": "packages/react-preset-typescript"
+  },
+  "keywords": [
+    "preset",
+    "react",
+    "typescript",
+    "react-preset-typescript"
+  ],
+  "author": "ong <ongw20@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ongw20/cli-react/issues"
+  },
+  "homepage": "https://github.com/ongw20/cli-react/tree/master/packages/react-preset-typescript#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "fs-extra": "^8.1.0",
+    "handlebars": "^4.2.0"
+  }
+}
