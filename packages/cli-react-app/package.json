@@ -1,6 +1,6 @@
 {
   "name": "cli-react-app",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Command line interface for rapid React.js development.",
   "bin": {
     "react": "bin/react.js"
