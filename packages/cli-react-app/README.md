@@ -8,9 +8,9 @@ npm i -g cli-react-app
 
 ### Usage
 ```sh
-react create <app-name> [-t <template>]
+react create <app-name> [-p <preset>]
 
-# template: babel (default), typescript
+# preset: babel (default), typescript
 
 cd app-name && npm i
 

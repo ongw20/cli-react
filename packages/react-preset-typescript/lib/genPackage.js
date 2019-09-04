@@ -4,7 +4,7 @@ function getCombinedJson(pkgJson) {
   return {
     ...pkgJson,
     description: 'A React.js project.',
-    main: 'src/index.js',
+    main: 'src/index.tsx',
     scripts: {
       dev: 'react-service serve',
       build: 'react-service build',

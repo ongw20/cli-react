@@ -33,7 +33,7 @@ program
 program
   .command('create <app-name>')
   .description('create a new project powered by cli-react-service')
-  .option('-t, --template <template>', `use template(default: babel) -- ${presets.join(' | ')}`)
+  .option('-p, --preset <preset>', `use preset(default: babel) -- ${presets.join(' | ')}`)
   .action((name, cmd) => {
     const options = cleanArgs(cmd)
 
