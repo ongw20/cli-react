@@ -1,6 +1,7 @@
 const path = require('path')
 const validateProjectName = require('validate-npm-package-name')
 const { fs, chalk, logger, clearConsole, execute } = require('cli-shared-utils')
+const initRepo = require('./initRepo')
 
 async function create(projectName, options) {
   const cwd = process.cwd()
@@ -24,6 +25,7 @@ async function create(projectName, options) {
   } else {
     logger.info('Creating project...\n')
     try {
+      initRepo(targetDir, name)
       await execute('git init', [], targetDir)
       const { preset } = options
       await execute(`npm install react-preset-${preset}`, ['--no-save'], targetDir)
