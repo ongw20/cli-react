@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 const { minimist, logger, checkNodeVersion } = require('cli-shared-utils')
 const requiredVersion = require('../package.json').engines.node
 
