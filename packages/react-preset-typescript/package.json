@@ -1,6 +1,6 @@
 {
   "name": "react-preset-typescript",
-  "version": "0.0.0",
+  "version": "0.4.0",
   "description": "React preset typescript.",
   "scripts": {
     "install": "node ./scripts/install.js"
