@@ -15,20 +15,18 @@ function initGit(targetDir) {
     '# Logs',
     'logs',
     '*.log',
-    '\n',
+    '',
     '# Coverage directory used by tools like istanbul',
     'coverage',
-    '\n',
+    '',
     '# Dependency directories',
     'node_modules/',
     'jspm_packages/',
-    '\n',
+    '',
     '.DS_store',
     '.vscode',
-    '/dist/',
-    '\n',
-    '*css.d.ts',
-    '\n'
+    '/dist',
+    ''
   ].join('\n')
   fs.outputFileSync(path.join(targetDir, '.gitignore'), gitIgnore)
 }
