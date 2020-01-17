@@ -22,8 +22,8 @@ function cleanArgs(cmd) {
 }
 
 const presets = [
-  'babel',
-  'typescript'
+  'js',
+  'ts'
 ]
 
 program
@@ -33,7 +33,7 @@ program
 program
   .command('create <app-name>')
   .description('create a new project powered by cli-react-service')
-  .option('-p, --preset <preset>', `use preset(default: babel) -- ${presets.join(' | ')}`)
+  .option('-p, --preset <preset>', `use preset(default: js) -- ${presets.join(' | ')}`)
   .action((name, cmd) => {
     const options = cleanArgs(cmd)
 
@@ -42,7 +42,7 @@ program
       logger.warn('You provided more than one argument. The first one will be used as the app\'s name, the rest are ignored.')
     }
 
-    const preset = options.preset || 'babel'
+    const preset = options.preset || 'js'
     if (!presets.includes(preset)) {
       logger.error(`Preset does not exist: "${preset}"`)
       process.exit(1)
