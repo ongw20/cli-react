@@ -6,13 +6,15 @@
   ],
   "scripts": {
     "postinstall": "lerna bootstrap",
-    "lint": "eslint -c .eslintrc.js --no-eslintrc --fix packages/**/*.js",
     "pub": "lerna publish"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix"]
   },
   "repository": {
     "type": "git",
@@ -38,6 +40,7 @@
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
     "husky": "^3.0.9",
-    "lerna": "^3.13.4"
+    "lerna": "^3.13.4",
+    "lint-staged": "^9.5.0"
   }
 }

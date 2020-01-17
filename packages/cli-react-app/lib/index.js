@@ -29,6 +29,7 @@ async function create(projectName, options) {
       await execute('git init', [], targetDir)
       const { preset } = options
       await execute(`npm install react-preset-${preset}`, ['--no-save'], targetDir)
+      await execute('git add', ['.'], targetDir)
       await execute('git commit', ['-m', 'Initial commit'], targetDir)
       clearConsole()
       logger.done(`Success! Created ${chalk.cyan.bold(name)} at ${targetDir}`)
