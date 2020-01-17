@@ -1,6 +1,6 @@
 {
   "name": "cli-react-service",
-  "version": "0.5.2",
+  "version": "0.5.5",
   "description": "Local service for react projects.",
   "bin": {
     "react-service": "bin/react-service.js"
