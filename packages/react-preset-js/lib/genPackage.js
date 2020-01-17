@@ -21,6 +21,7 @@ function getCombinedJson(pkgJson) {
       'css-loader': '^2.1.1',
       enzyme: '^3.9.0',
       'enzyme-adapter-react-16': '^1.13.2',
+      eslint: '^6.5.1',
       'eslint-config-standard': '^12.0.0',
       'eslint-plugin-import': '^2.16.0',
       'eslint-plugin-node': '^8.0.1',
@@ -35,12 +36,10 @@ function getCombinedJson(pkgJson) {
       'less-loader': '^5.0.0',
       'lint-staged': '^9.5.0',
       'mini-css-extract-plugin': '^0.6.0',
-      postcss: '^7.0.26',
       'postcss-loader': '^3.0.0',
       'style-loader': '^0.23.1',
       stylelint: '^10.1.0',
-      'stylelint-config-standard': '^18.3.0',
-      'stylelint-webpack-plugin': '^0.10.5'
+      'stylelint-config-standard': '^18.3.0'
     },
     dependencies: {
       '@babel/runtime': '^7.4.3',
@@ -48,8 +47,13 @@ function getCombinedJson(pkgJson) {
       react: '^16.8.6',
       'react-dom': '^16.8.6'
     },
+    husky: {
+      hooks: {
+        'pre-commit': 'lint-staged'
+      }
+    },
     'lint-staged': {
-      '*.jsx?': [
+      '*.js?(x)': [
         'eslint --fix',
         'git add'
       ],

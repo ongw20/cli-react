@@ -2,7 +2,6 @@
 const CleanWebpackPLugin = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const StyleLintWebpackPlugin = require('stylelint-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const isProd = process.env.NODE_ENV === 'production'
@@ -16,12 +15,6 @@ module.exports = {
         use: [
           'babel-loader',
           'ts-loader',
-          {
-            loader: 'eslint-loader',
-            options: {
-              fix: true
-            }
-          }
         ]
       },
       {
@@ -57,10 +50,6 @@ module.exports = {
         collapseWhitespace: true
       },
       hash: false
-    }),
-    new StyleLintWebpackPlugin({
-      fix: true,
-      files: 'src/**/*.less'
     }),
     ...(isProd ? [
       new MiniCssExtractPlugin({

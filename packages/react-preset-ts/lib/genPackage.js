@@ -23,6 +23,7 @@ function getCombinedJson(pkgJson) {
       'cli-react-service': '^0.3.0',
       'copy-webpack-plugin': '^5.0.2',
       'css-loader': '^2.1.1',
+      eslint: '^6.5.1',
       'eslint-plugin-react': '^7.14.3',
       'html-webpack-plugin': '^3.2.0',
       husky: '^4.0.10',
@@ -36,7 +37,6 @@ function getCombinedJson(pkgJson) {
       'style-loader': '^0.23.1',
       stylelint: '^10.1.0',
       'stylelint-config-standard': '^18.3.0',
-      'stylelint-webpack-plugin': '^0.10.5',
       'ts-jest': '^24.0.2',
       'ts-loader': '^5.4.3',
       typescript: '^3.4.5'
@@ -47,8 +47,13 @@ function getCombinedJson(pkgJson) {
       react: '^16.8.6',
       'react-dom': '^16.8.6'
     },
+    husky: {
+      hooks: {
+        'pre-commit': 'lint-staged'
+      }
+    },
     'lint-staged': {
-      '*.tsx?': [
+      '*.ts?(x)': [
         'eslint --fix',
         'git add'
       ],

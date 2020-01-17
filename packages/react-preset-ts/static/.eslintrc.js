@@ -27,7 +27,7 @@ module.exports = {
     'eol-last': ['error', 'always'],
     'no-unused-vars': ['warn', { 'vars': 'all', 'args': 'after-used', 'ignoreRestSiblings': false }],
     'no-console': 'warn',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+    'no-debugger': 'error',
     'quotes': ['error', 'single'],
     'space-before-function-paren': ['error', 'never']
   }

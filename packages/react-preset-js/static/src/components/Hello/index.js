@@ -1,8 +1,6 @@
 import React from 'react'
-import './index.scss'
+import './index.less'
 
-export default class Hello extends React.PureComponent {
-  render() {
-    return <h1 className="hello">Hello</h1>
-  }
-}
+const Hello = () => <h1 className="hello">Hello</h1>
+
+export default Hello

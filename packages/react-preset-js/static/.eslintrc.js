@@ -1,8 +1,7 @@
 module.exports = {
   parser: 'babel-eslint',
   env: {
-    jest: true,
-    node: true
+    jest: true
   },
   extends: [
     'standard',
@@ -17,6 +16,6 @@ module.exports = {
     'no-unused-vars': ['warn', { 'vars': 'all', 'args': 'after-used', 'ignoreRestSiblings': false }],
     'space-before-function-paren': ['error', 'never'],
     'no-console': 'warn',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn'
+    'no-debugger': 'error'
   }
 }
