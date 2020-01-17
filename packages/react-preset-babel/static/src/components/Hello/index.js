@@ -1,8 +1,8 @@
 import React from 'react'
-import styles from './index.scss'
+import './index.scss'
 
 export default class Hello extends React.PureComponent {
   render() {
-    return <h1 className={styles.hello}>Hello</h1>
+    return <h1 className="hello">Hello</h1>
   }
 }

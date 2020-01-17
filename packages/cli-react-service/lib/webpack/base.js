@@ -26,12 +26,6 @@ module.exports = (hashLen) => ({
               // directory for faster rebuilds.
               cacheDirectory: true
             }
-          },
-          {
-            loader: 'eslint-loader',
-            options: {
-              fix: true
-            }
           }
         ]
       },
