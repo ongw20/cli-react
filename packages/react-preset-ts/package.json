@@ -1,27 +1,27 @@
 {
-  "name": "react-preset-babel",
-  "version": "0.5.2",
-  "description": "React preset babel.",
+  "name": "react-preset-ts",
+  "version": "0.5.1",
+  "description": "React preset ts.",
   "scripts": {
     "install": "node ./scripts/install.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ongw20/cli-react.git",
-    "directory": "packages/react-preset-babel"
+    "directory": "packages/react-preset-ts"
   },
   "keywords": [
     "preset",
     "react",
-    "babel",
-    "react-preset-babel"
+    "ts",
+    "react-preset-ts"
   ],
   "author": "ong <ongw20@outlook.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ongw20/cli-react/issues"
   },
-  "homepage": "https://github.com/ongw20/cli-react/tree/master/packages/react-preset-babel#readme",
+  "homepage": "https://github.com/ongw20/cli-react/tree/master/packages/react-preset-ts#readme",
   "publishConfig": {
     "access": "public"
   },
