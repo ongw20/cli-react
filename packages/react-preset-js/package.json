@@ -1,6 +1,6 @@
 {
   "name": "react-preset-js",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "React preset js.",
   "scripts": {
     "install": "node ./scripts/install.js"
