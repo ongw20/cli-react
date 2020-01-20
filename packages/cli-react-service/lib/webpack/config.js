@@ -6,7 +6,7 @@ const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plug
 const portfinder = require('portfinder')
 const ip = require('ip')
 const { chalk, logger } = require('cli-shared-utils')
-const getWepbackBaseConfig = require('./base')
+const webpackBaseConfig = require('./base')
 
 function getWebpackUserConfig(webpackConfigFile) {
   try {
@@ -17,8 +17,7 @@ function getWebpackUserConfig(webpackConfigFile) {
   }
 }
 
-async function getWebpackDevConfig(webpackConfigFile, hashLen) {
-  const webpackBaseConfig = getWepbackBaseConfig(hashLen)
+async function getWebpackDevConfig(webpackConfigFile) {
   const webpackUserConfig = getWebpackUserConfig(webpackConfigFile)
   const devServerConfig = {
     ...webpackBaseConfig.devServer,
@@ -61,14 +60,10 @@ async function getWebpackDevConfig(webpackConfigFile, hashLen) {
   }
 }
 
-function getWebpackProdConfig(webpackConfigFile, hashLen) {
-  const webpackBaseConfig = getWepbackBaseConfig(hashLen)
+function getWebpackProdConfig(webpackConfigFile) {
   const webpackUserConfig = getWebpackUserConfig(webpackConfigFile)
   return merge(webpackBaseConfig, {
     mode: 'production',
-    output: {
-      filename: `js/[name].[chunkhash:${hashLen}].js`
-    },
     optimization: {
       minimizer: [
         new TerserWebpackPlugin({}),

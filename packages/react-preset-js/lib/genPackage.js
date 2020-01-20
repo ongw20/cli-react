@@ -11,10 +11,13 @@ function getCombinedJson(pkgJson) {
       test: 'jest --coverage'
     },
     devDependencies: {
+      '@babel/core': '^7.4.3',
       '@babel/plugin-transform-runtime': '^7.4.3',
+      '@babel/preset-env': '^7.4.3',
       '@babel/preset-react': '^7.0.0',
       autoprefixer: '^9.6.0',
       'babel-eslint': '^10.0.1',
+      'babel-loader': '^8.0.5',
       'clean-webpack-plugin': '^2.0.1',
       'cli-react-service': '^0.3.0',
       'copy-webpack-plugin': '^5.0.2',

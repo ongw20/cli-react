@@ -11,7 +11,9 @@ function getCombinedJson(pkgJson) {
       test: 'jest --coverage'
     },
     devDependencies: {
+      '@babel/core': '^7.4.3',
       '@babel/plugin-transform-runtime': '^7.4.3',
+      '@babel/preset-env': '^7.4.3',
       '@babel/preset-react': '^7.0.0',
       '@types/jest': '^24.0.13',
       '@types/react': '^16.8.14',
@@ -19,6 +21,7 @@ function getCombinedJson(pkgJson) {
       '@typescript-eslint/eslint-plugin': '^2.0.0',
       '@typescript-eslint/parser': '^1.7.0',
       autoprefixer: '^9.6.0',
+      'babel-loader': '^8.0.5',
       'clean-webpack-plugin': '^2.0.1',
       'cli-react-service': '^0.3.0',
       'copy-webpack-plugin': '^5.0.2',
