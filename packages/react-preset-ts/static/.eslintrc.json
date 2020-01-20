@@ -29,6 +29,7 @@
     "no-console": "warn",
     "no-debugger": "error",
     "quotes": ["error", "single"],
+    "react/prop-types": ["off"],
     "semi": ["error","never"],
     "space-before-function-paren": ["error", "never"]
   }
