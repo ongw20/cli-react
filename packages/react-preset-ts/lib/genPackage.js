@@ -32,7 +32,6 @@ function getCombinedJson(pkgJson) {
       'less-loader': '^5.0.0',
       'lint-staged': '^9.5.0',
       'mini-css-extract-plugin': '^0.6.0',
-      postcss: '^7.0.26',
       'postcss-loader': '^3.0.0',
       'style-loader': '^0.23.1',
       stylelint: '^10.1.0',
