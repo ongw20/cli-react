@@ -6,7 +6,8 @@
   ],
   "scripts": {
     "postinstall": "lerna bootstrap",
-    "pub": "lerna publish"
+    "pub": "lerna publish",
+    "lint": "eslint -c .eslintrc.json --no-eslintrc --fix packages/**/*.js"
   },
   "husky": {
     "hooks": {
@@ -15,7 +16,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint -c .eslintrc.js --no-eslintrc --fix",
+      "eslint -c .eslintrc.json --no-eslintrc --fix",
       "git add"
     ]
   },

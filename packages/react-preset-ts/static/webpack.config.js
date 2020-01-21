@@ -36,7 +36,7 @@ module.exports = {
               cacheDirectory: true
             }
           },
-          'ts-loader',
+          'ts-loader'
         ]
       },
       {
