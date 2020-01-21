@@ -19,7 +19,7 @@ function getCombinedJson(pkgJson) {
       'babel-eslint': '^10.0.1',
       'babel-loader': '^8.0.5',
       'clean-webpack-plugin': '^2.0.1',
-      'cli-react-service': '^0.3.0',
+      'cli-react-service': '^0.6.0',
       'copy-webpack-plugin': '^5.0.2',
       'css-loader': '^2.1.1',
       enzyme: '^3.9.0',

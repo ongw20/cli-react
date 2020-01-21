@@ -7,20 +7,21 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
+  entry: './src/index.js',
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: isProd ? 'js/[name].[chunkhash:8].js' : 'js/[name].js',
+    chunkFilename: 'js/[name].[chunkhash:8].js',
+    publicPath: '/'
+  },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   module: {
-    entry: './src/index.jsx',
-    output: {
-      path: path.join(__dirname, 'dist'),
-      filename: isProd ? 'js/[name].[chunkhash:8].js' : 'js/[name].js',
-      chunkFilename: 'js/[name].[chunkhash:8].js',
-      publicPath: '/'
-    },
-    resolve: {
-      extensions: ['.js', '.jsx']
-    },
     rules: [
       {
         test: /\.jsx?$/,
+        exclude: /node_modules/,
         use: [
           {
             loader: 'babel-loader',
