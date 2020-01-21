@@ -16,7 +16,10 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['.ts', '.tsx']
+    extensions: ['.ts', '.tsx'],
+    alias: {
+      '@': path.resolve(__dirname, 'src')
+    }
   },
   module: {
     rules: [
@@ -25,6 +28,7 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
+            exclude: /node_modules/,
             options: {
               // This is a feature of `babel-loader` for webpack (not Babel itself).
               // It enables caching results in ./node_modules/.cache/babel-loader/
