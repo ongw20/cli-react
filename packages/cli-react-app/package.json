@@ -1,6 +1,6 @@
 {
   "name": "cli-react-app",
-  "version": "0.6.1",
+  "version": "0.6.3",
   "description": "Command line interface for rapid React.js development.",
   "bin": {
     "react": "bin/react.js"
@@ -26,7 +26,7 @@
     "access": "public"
   },
   "dependencies": {
-    "cli-shared-utils": "^0.3.1",
+    "cli-shared-utils": "^0.6.3",
     "commander": "^3.0.1",
     "validate-npm-package-name": "^3.0.0"
   },
