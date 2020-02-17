@@ -16,8 +16,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint -c .eslintrc.json --no-eslintrc --fix",
-      "git add"
+      "eslint -c .eslintrc.json --no-eslintrc --fix"
     ]
   },
   "repository": {
