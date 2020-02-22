@@ -3,5 +3,5 @@ const renderFile = require('./renderFile')
 
 module.exports = {
   genPackage,
-  renderFile
+  renderFile,
 }

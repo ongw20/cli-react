@@ -3,7 +3,7 @@
   "version": "0.6.3",
   "description": "React preset js.",
   "scripts": {
-    "install": "node ./scripts/install.js"
+    "postinstall": "node ./scripts/install.js"
   },
   "repository": {
     "type": "git",

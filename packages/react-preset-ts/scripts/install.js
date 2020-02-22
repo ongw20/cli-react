@@ -19,7 +19,7 @@ function genProj() {
         return false
       }
       return true
-    }
+    },
   })
 }
 

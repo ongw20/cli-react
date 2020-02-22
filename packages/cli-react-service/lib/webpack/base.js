@@ -2,7 +2,7 @@ const WebpackBar = require('webpackbar')
 
 module.exports = {
   plugins: [
-    new WebpackBar()
+    new WebpackBar(),
   ],
   devServer: {
     host: '0.0.0.0',
@@ -12,8 +12,8 @@ module.exports = {
     clientLogLevel: 'error',
     overlay: {
       warnings: false,
-      errors: false
+      errors: false,
     },
-    historyApiFallback: true
-  }
+    historyApiFallback: true,
+  },
 }

@@ -6,6 +6,7 @@
   },
   "extends": "standard",
   "rules": {
+    "comma-dangle": ["error", "always-multiline"],
     "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
     "space-before-function-paren": ["error", "never"]
   }

@@ -4,10 +4,6 @@
     "jest": true
   },
   "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": "./tsconfig.json",
-    "warnOnUnsupportedTypeScriptVersion": false
-  },
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
@@ -15,7 +11,8 @@
     "plugin:react/recommended"
   ],
   "plugins": [
-    "@typescript-eslint/eslint-plugin"
+    "@typescript-eslint/eslint-plugin",
+    "react-hooks"
   ],
   "settings": {
     "react": {
@@ -23,14 +20,34 @@
     }
   },
   "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/indent": ["error", 2],
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-unused-vars": ["warn", {
+      "vars": "all",
+      "args": "after-used",
+      "argsIgnorePattern": "^_",
+      "ignoreRestSiblings": false
+    }],
+    "comma-dangle": ["error", "always-multiline"],
     "eol-last": ["error", "always"],
-    "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
     "no-console": "warn",
     "no-debugger": "error",
+    "no-unused-vars": "off",
     "quotes": ["error", "single"],
     "react/prop-types": ["off"],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
     "semi": ["error","never"],
     "space-before-function-paren": ["error", "never"]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.ts"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "warn"
+      }
+    }
+  ]
 }

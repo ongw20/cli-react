@@ -6,15 +6,14 @@ const build = require('./webpack/build')
 async function run(command, options) {
   process.env.CONTEXT = process.cwd()
   const webpackUserConfigFile = options.config || 'webpack.config.js'
-  const hashLen = options.hash || 8
 
   if (command === 'build') {
     process.env.NODE_ENV = 'production'
-    const prodConfig = getWebpackProdConfig(webpackUserConfigFile, hashLen)
+    const prodConfig = getWebpackProdConfig(webpackUserConfigFile)
     build(prodConfig)
   } else if (command === 'serve') {
     process.env.NODE_ENV = 'development'
-    const { devConfig, devServerConfig } = await getWebpackDevConfig(webpackUserConfigFile, hashLen)
+    const { devConfig, devServerConfig } = await getWebpackDevConfig(webpackUserConfigFile)
     serve(devConfig, devServerConfig)
   } else {
     logger.error(`Unknow command: "${command}"`)

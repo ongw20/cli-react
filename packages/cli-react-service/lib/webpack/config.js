@@ -21,12 +21,12 @@ async function getWebpackDevConfig(webpackConfigFile) {
   const webpackUserConfig = getWebpackUserConfig(webpackConfigFile)
   const devServerConfig = {
     ...webpackBaseConfig.devServer,
-    ...webpackUserConfig.devServer
+    ...webpackUserConfig.devServer,
   }
   try {
     devServerConfig.port = await portfinder.getPortPromise({
       port: devServerConfig.port,
-      stopPort: devServerConfig.port + 100
+      stopPort: devServerConfig.port + 100,
     })
   } catch (err) {
     logger.error('Could not find a port for server.')
@@ -44,19 +44,19 @@ async function getWebpackDevConfig(webpackConfigFile) {
           messages: [
             'App running at:',
             `- Local:   ${protocal}://${host}:${chalk.cyan(devServerConfig.port)}/`,
-            `- Network: ${protocal}://${ip.address()}:${chalk.cyan(devServerConfig.port)}/`
+            `- Network: ${protocal}://${ip.address()}:${chalk.cyan(devServerConfig.port)}/`,
           ],
           notes: [
             'Note that the development build is not optimized.',
-            `To create a production build, run ${chalk.blue('npm run build')}.`
-          ]
-        }
-      })
-    ]
+            `To create a production build, run ${chalk.blue('npm run build')}.`,
+          ],
+        },
+      }),
+    ],
   }, webpackUserConfig)
   return {
     devConfig,
-    devServerConfig
+    devServerConfig,
   }
 }
 
@@ -67,21 +67,21 @@ function getWebpackProdConfig(webpackConfigFile) {
     optimization: {
       minimizer: [
         new TerserWebpackPlugin({}),
-        new OptimizeCssAssetsWebpackPlugin({})
+        new OptimizeCssAssetsWebpackPlugin({}),
       ],
       splitChunks: {
         chunks: 'all',
-        name: true
+        name: true,
       },
-      runtimeChunk: true
+      runtimeChunk: true,
     },
     plugins: [
-      new FriendlyErrorsWebpackPlugin()
-    ]
+      new FriendlyErrorsWebpackPlugin(),
+    ],
   }, webpackUserConfig)
 }
 
 module.exports = {
   getWebpackDevConfig,
-  getWebpackProdConfig
+  getWebpackProdConfig,
 }

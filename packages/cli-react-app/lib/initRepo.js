@@ -5,7 +5,7 @@ function initPackage(targetDir, name) {
   const pkgJson = {
     name,
     version: '0.1.0',
-    private: true
+    private: true,
   }
   fs.outputJSONSync(path.join(targetDir, 'package.json'), pkgJson)
 }
@@ -24,9 +24,10 @@ function initGit(targetDir) {
     'jspm_packages/',
     '',
     '.DS_store',
+    'screenshots',
     '.vscode',
     '/dist',
-    ''
+    '',
   ].join('\n')
   fs.outputFileSync(path.join(targetDir, '.gitignore'), gitIgnore)
 }

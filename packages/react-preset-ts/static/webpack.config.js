@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
-const CleanWebpackPLugin = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const gitRepoInfo = require('git-repo-info')
+
+const info = gitRepoInfo()
 
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -86,7 +88,11 @@ module.exports = {
         removeComments: true,
         collapseWhitespace: true
       },
-      hash: false
+      hash: false,
+      meta: {
+        version: require('./package.json').version,
+        build: `${info.branch}-${info.abbreviatedSha}`,
+      },
     }),
     ...(isProd ? [
       new MiniCssExtractPlugin({

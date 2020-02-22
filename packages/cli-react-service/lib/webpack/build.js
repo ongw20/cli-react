@@ -15,7 +15,7 @@ module.exports = function(options) {
     const messages = stats.toJson({
       all: false,
       warnings: true,
-      errors: true
+      errors: true,
     })
     if (messages.errors.length) {
       process.exit(1)
@@ -23,7 +23,7 @@ module.exports = function(options) {
     const json = stats.toJson({
       hash: false,
       modules: false,
-      chunks: false
+      chunks: false,
     })
     let assets = json.assets
       ? json.assets
@@ -79,9 +79,9 @@ module.exports = function(options) {
       makeRow(
         chalk.cyan.bold('File'),
         chalk.cyan.bold('Size'),
-        chalk.cyan.bold('Gzipped')
+        chalk.cyan.bold('Gzipped'),
       ) + '\n\n' +
-      assets.map(asset => formatRow(asset)).join('\n')
+      assets.map(asset => formatRow(asset)).join('\n'),
     )
 
     logger.log(`${ui.toString()}\n\n  ${chalk.gray('Images and other types of assets omitted.')}\n`)

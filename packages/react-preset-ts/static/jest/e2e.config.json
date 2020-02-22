@@ -1,0 +1,11 @@
+{
+  "rootDir": "../",
+  "roots": ["<rootDir>/e2e/"],
+  "setupFiles": [
+    "<rootDir>/jest/e2e.setup.js"
+  ],
+  "transform": {
+    "^.+\\.ts$": "ts-jest"
+  },
+  "collectCoverage": false
+}
