@@ -1,6 +1,6 @@
 {
   "name": "react-preset-ts",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "React preset ts.",
   "scripts": {
     "install": "node ./scripts/install.js"
