@@ -28,6 +28,7 @@ async function create(projectName, options) {
       initRepo(targetDir, name)
       await execute('git init', [], targetDir)
       const { preset } = options
+      process.env.CONTEXT = targetDir
       await execute(`npm install react-preset-${preset}`, ['-g'], targetDir)
       await execute('git add', ['.'], targetDir)
       await execute('git commit', ['-m', 'Initial commit'], targetDir)

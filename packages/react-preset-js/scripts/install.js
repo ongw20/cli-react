@@ -4,13 +4,13 @@ const fs = require('fs-extra')
 const { genPackage, renderFile } = require('../lib')
 
 function genProj() {
-  const cwd = process.cwd()
-  // `node_modules` in the path means user to install.
-  if (!/[/\\]node_modules[/\\]/.test(cwd)) return
-  const root = path.resolve(cwd, '../../')
+  if (!process.env.CONTEXT) return
+  const root = process.env.CONTEXT
   const pkgFile = path.join(root, 'package.json')
   const pkgJson = require(pkgFile)
   genPackage(pkgFile, pkgJson)
+
+  const cwd = process.cwd()
   fs.copySync(path.join(cwd, 'static'), root)
   fs.copySync(path.join(cwd, 'templates'), root, {
     filter: (src, dest) => {
