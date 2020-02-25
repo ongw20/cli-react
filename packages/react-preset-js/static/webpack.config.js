@@ -6,7 +6,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
-  entry: './src/index.js',
+  entry: [
+    'core-js',
+    './src/index.js'
+  ],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: isProd ? 'js/[name].[chunkhash:8].js' : 'js/[name].js',

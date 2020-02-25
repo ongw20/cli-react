@@ -2,7 +2,7 @@
   "description": "A React.js project.",
   "main": "src/index.js",
   "scripts": {
-    "dev": "react-service serve",
+    "dev": "rimraf ./dist && react-service serve",
     "build": "rimraf ./dist && react-service build",
     "test": "jest --coverage"
   },
@@ -19,7 +19,7 @@
     "@babel/preset-react": "^7.8.3",
     "autoprefixer": "^9.7.4",
     "babel-loader": "^8.0.6",
-    "cli-react-service": "^0.6.3",
+    "cli-react-service": "^0.7.0",
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.4.2",
     "enzyme": "^3.11.0",
