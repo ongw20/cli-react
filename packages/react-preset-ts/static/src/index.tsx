@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import './assets/styles/global.less'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-import './assets/styles/global.less'
 
 ReactDOM.render(
   <App />,

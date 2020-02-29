@@ -1,7 +1,7 @@
-import { echo } from './index'
+import { echo } from '.'
 
 describe('echo', () => {
-  it('echo inputs', () => {
+  it('should echo inputs', () => {
     expect(echo('hello')).toBe('hello')
   })
 })

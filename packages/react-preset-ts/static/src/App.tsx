@@ -1,8 +1,6 @@
 import React from 'react'
-import Hello from './components/Hello'
+import Hello from '@/components/Hello'
 
-export default class App extends React.PureComponent {
-  render(): React.ReactNode {
-    return <Hello />
-  }
-}
+const App = () => <Hello />
+
+export default App
