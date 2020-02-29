@@ -49,6 +49,7 @@ module.exports = {
         enforce: 'pre',
         options: {
           sourceMap: true,
+          javascriptEnabled: true,
         },
       },
       {
