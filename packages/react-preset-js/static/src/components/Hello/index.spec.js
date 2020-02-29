@@ -1,10 +1,16 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Hello from './index'
+import toJSON from 'enzyme-to-json'
+import Hello from '.'
 
 describe('Hello', () => {
+  const wrapper = shallow(<Hello />)
+
   it('should render hello', () => {
-    const wrapper = shallow(<Hello />)
     expect(wrapper.contains('Hello')).toBe(true)
+  })
+
+  it('should match snapshot', () => {
+    expect(toJSON(wrapper)).toMatchSnapshot()
   })
 })

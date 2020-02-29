@@ -16,8 +16,8 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: isProd ? 'js/[name].[chunkhash:8].js' : 'js/[name].js',
-    chunkFilename: 'js/[name].[chunkhash:8].js',
+    filename: isProd ? 'js/[name].[chunkhash:7].js' : 'js/[name].js',
+    chunkFilename: 'js/[name].[chunkhash:7].js',
     publicPath: '/',
   },
   resolve: {
@@ -65,7 +65,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 8192,
-          name: 'assets/img/[name].[hash:8].[ext]',
+          name: 'assets/img/[name].[hash:7].[ext]',
         },
       },
       {
@@ -73,7 +73,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 8192,
-          name: 'assets/font/[name].[hash:8].[ext]',
+          name: 'assets/font/[name].[hash:7].[ext]',
         },
       },
     ],
@@ -99,8 +99,8 @@ module.exports = {
     }),
     ...(isProd ? [
       new MiniCssExtractPlugin({
-        filename: 'css/[name].[hash:8].css',
-        chunkFilename: 'css/[name].[id].[hash:8].css',
+        filename: 'css/[name].[hash:7].css',
+        chunkFilename: 'css/[name].[id].[hash:7].css',
       }),
     ] : []),
   ],
