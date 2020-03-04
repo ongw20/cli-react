@@ -10,10 +10,7 @@ const info = gitRepoInfo()
 const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
-  entry: [
-    'core-js',
-    './src/index.tsx',
-  ],
+  entry: ['core-js', './src/index.tsx'],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: isProd ? 'js/[name].[chunkhash:7].js' : 'js/[name].js',
@@ -79,11 +76,13 @@ module.exports = {
     ],
   },
   plugins: [
-    new CopyWebpackPlugin([{
-      from: 'public',
-      to: './',
-      ignore: ['index.html'],
-    }]),
+    new CopyWebpackPlugin([
+      {
+        from: 'public',
+        to: './',
+        ignore: ['index.html'],
+      },
+    ]),
     new HtmlWebpackPlugin({
       template: 'public/index.html',
       filename: 'index.html',
@@ -97,12 +96,14 @@ module.exports = {
         build: `${info.branch}-${info.abbreviatedSha.substr(0, 7)}`,
       },
     }),
-    ...(isProd ? [
-      new MiniCssExtractPlugin({
-        filename: 'css/[name].[hash:7].css',
-        chunkFilename: 'css/[name].[id].[hash:7].css',
-      }),
-    ] : []),
+    ...(isProd
+      ? [
+          new MiniCssExtractPlugin({
+            filename: 'css/[name].[hash:7].css',
+            chunkFilename: 'css/[name].[id].[hash:7].css',
+          }),
+        ]
+      : []),
   ],
   devServer: {
     https: false,

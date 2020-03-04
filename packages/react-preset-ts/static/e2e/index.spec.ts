@@ -4,7 +4,7 @@ describe('example', () => {
   let browser: Browser
   let page: Page
 
-  beforeAll(async() => {
+  beforeAll(async () => {
     browser = await launch({
       defaultViewport: {
         width: 1200,
@@ -14,11 +14,11 @@ describe('example', () => {
     page = await browser.newPage()
   })
 
-  afterAll(async() => {
+  afterAll(async () => {
     await browser.close()
   })
 
-  it('should open login page', async() => {
+  it('should open login page', async () => {
     await page.goto('https://example.com/')
     await page.screenshot({ path: 'screenshots/example.png' })
   })
