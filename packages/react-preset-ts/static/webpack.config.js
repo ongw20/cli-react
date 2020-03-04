@@ -45,7 +45,7 @@ module.exports = {
         loader: 'less-loader',
         enforce: 'pre',
         options: {
-          sourceMap: true,
+          sourceMap: !isProd,
           javascriptEnabled: true,
         },
       },
@@ -53,8 +53,18 @@ module.exports = {
         test: /\.(less|css)$/,
         use: [
           isProd ? MiniCssExtractPlugin.loader : 'style-loader',
-          'css-loader',
-          'postcss-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: !isProd,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: !isProd,
+            },
+          },
         ],
       },
       {
