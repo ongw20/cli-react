@@ -8,7 +8,8 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
   ],
   "plugins": [
     "@typescript-eslint/eslint-plugin",
@@ -21,26 +22,14 @@
   },
   "rules": {
     "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/indent": ["error", 2],
+    "@typescript-eslint/member-delimiter-style": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
-    "@typescript-eslint/no-unused-vars": ["warn", {
-      "vars": "all",
-      "args": "after-used",
-      "argsIgnorePattern": "^_",
-      "ignoreRestSiblings": false
-    }],
-    "comma-dangle": ["error", "always-multiline"],
-    "eol-last": ["error", "always"],
     "no-console": "warn",
     "no-debugger": "error",
-    "no-unused-vars": "off",
-    "quotes": ["error", "single"],
-    "react/prop-types": ["off"],
+    "react/prop-types": "off",
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "semi": ["error","never"],
-    "space-before-function-paren": ["error", "never"]
+    "react-hooks/exhaustive-deps": "warn"
   },
   "overrides": [
     {
