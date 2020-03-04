@@ -5,7 +5,9 @@
     "dev": "rimraf ./dist && react-service serve",
     "build": "rimraf ./dist && react-service build",
     "test": "jest --config jest/unit.config.json",
-    "e2e": "jest --config jest/e2e.config.json"
+    "e2e": "jest --config jest/e2e.config.json",
+    "lint:script": "eslint --fix **/*.ts?(x) **/*.js",
+    "lint:style": "stylelint --syntax=less --fix **/*.less"
   },
   "dependencies": {
     "@babel/runtime": "^7.8.4",
