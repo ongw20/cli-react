@@ -7,7 +7,7 @@ function checkNodeVersion(requiredVersion, id) {
   if (!semver.satisfies(process.version, requiredVersion)) {
     logger.error(
       'You are using Node ' + process.version + ', but this version of ' + id +
-      ' requires Node ' + requiredVersion + '.\nPlease upgrade your Node version.'
+      ' requires Node ' + requiredVersion + '.\nPlease upgrade your Node version.',
     )
     process.exit(1)
   }
@@ -29,5 +29,5 @@ module.exports = {
   execute,
   fs: require('fs-extra'),
   chalk: require('chalk'),
-  minimist: require('minimist')
+  minimist: require('minimist'),
 }

@@ -4,7 +4,7 @@ module.exports = (command, args, cwd) => {
   return new Promise((resolve, reject) => {
     const child = execa(command, args, {
       cwd,
-      stdio: ['inherit', 'inherit', 'inherit']
+      stdio: ['inherit', 'inherit', 'inherit'],
     })
 
     child.on('close', code => {

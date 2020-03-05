@@ -27,5 +27,5 @@ module.exports = {
   },
   done(msg, tag = null) {
     console.log(format(chalk.bgGreen.black(' DONE ') + (tag ? chalkTag(tag) : ''), msg))
-  }
+  },
 }
