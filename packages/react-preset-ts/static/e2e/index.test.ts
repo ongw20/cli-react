@@ -18,7 +18,7 @@ describe('example', () => {
     await browser.close()
   })
 
-  it('should open login page', async () => {
+  it('should open page', async () => {
     await page.goto('https://example.com/')
     await page.screenshot({ path: 'screenshots/example.png' })
   })
