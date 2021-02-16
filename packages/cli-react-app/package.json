@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "cli-shared-utils": "^0.7.10",
-    "commander": "^4.1.1",
+    "commander": "^7.1.0",
     "validate-npm-package-name": "^3.0.0"
   },
   "engines": {
